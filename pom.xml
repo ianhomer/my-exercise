@@ -14,6 +14,7 @@
 
   <modules>
     <module>project-example</module>
+    <module>hibernate-exercise</module>
   </modules>
 
   <organization>
