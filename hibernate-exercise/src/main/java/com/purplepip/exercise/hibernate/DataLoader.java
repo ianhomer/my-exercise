@@ -19,20 +19,23 @@ import com.purplepip.exercise.hibernate.model.Person;
 import com.purplepip.exercise.hibernate.model.Skill;
 import com.purplepip.exercise.hibernate.repositories.PersonRepository;
 import com.purplepip.exercise.hibernate.repositories.SkillRepository;
-import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@Component
-public class DataLoader {
+@Service
+public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
   @Autowired
   private PersonRepository personRepository;
 
   @Autowired
   private SkillRepository skillRepository;
 
-  @PostConstruct
-  public void afterPropertiesSet() {
+  @Override
+  @Transactional
+  public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
     load();
   }
 
@@ -43,6 +46,17 @@ public class DataLoader {
     for (int i = 0 ; i < 10 ; i ++) {
       createPerson("person" + i);
     }
+
+    addSkills(personRepository.findByName("person1"), "skill1", "skill2", "skill4");
+    addSkills(personRepository.findByName("person2"), "skill7");
+  }
+
+  private void addSkills(Person person, String... names) {
+    for (String name : names) {
+      Skill skill = skillRepository.findByName(name);
+      person.getSkills().add(skill);
+    }
+    personRepository.save(person);
   }
 
   private void createPerson(String name) {
@@ -56,5 +70,6 @@ public class DataLoader {
     skill.setName(name);
     skillRepository.save(skill);
   }
+
 
 }

@@ -29,7 +29,7 @@ import lombok.Data;
 public class Skill {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID")
+  @Column(name = "skill_id")
   private int id;
 
   @Column(unique = true)

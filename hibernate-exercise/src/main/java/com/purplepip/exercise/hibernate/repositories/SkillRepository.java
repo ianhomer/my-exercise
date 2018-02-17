@@ -15,8 +15,10 @@
 
 package com.purplepip.exercise.hibernate.repositories;
 
+import com.purplepip.exercise.hibernate.model.Person;
 import com.purplepip.exercise.hibernate.model.Skill;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SkillRepository extends CrudRepository<Skill, Integer> {
+  Skill findByName(String name);
 }

@@ -15,11 +15,16 @@
 
 package com.purplepip.exercise.hibernate.model;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -29,9 +34,17 @@ import lombok.Data;
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID")
+  @Column(name = "person_id")
   private int id;
 
   @Column(unique = true)
   private String name;
+
+  @ManyToMany
+  @JoinTable(
+      name = "Person_Skill",
+      joinColumns = { @JoinColumn(name = "person_id") },
+      inverseJoinColumns = { @JoinColumn(name = "skill_id") }
+  )
+  Set<Skill> skills = new HashSet<>();
 }
