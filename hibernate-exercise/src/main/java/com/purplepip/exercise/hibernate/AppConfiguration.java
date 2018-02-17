@@ -40,10 +40,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class AppConfiguration {
   @Autowired
-  PersonRepository personRepository;
+  private PersonRepository personRepository;
 
   @Bean
-  DataSource dataSource(@Value("${jdbc.driverClassName}") String driverClassName,
+  private DataSource dataSource(@Value("${jdbc.driverClassName}") String driverClassName,
                         @Value("${jdbc.url}") String url,
                         @Value("${jdbc.username}") String username,
                         @Value("${jdbc.password}") String password) {
@@ -56,12 +56,12 @@ public class AppConfiguration {
   }
 
   @Bean
-  HibernateJpaVendorAdapter hibernateJpaVendorAdapter() {
+  private HibernateJpaVendorAdapter hibernateJpaVendorAdapter() {
     return new HibernateJpaVendorAdapter();
   }
 
   @Bean
-  EntityManagerFactory entityManagerFactory(
+  private EntityManagerFactory entityManagerFactory(
       @Autowired DataSource dataSource,
       @Autowired JpaVendorAdapter jpaVendorAdapter,
       @Value("${hibernate.dialect}") String hibernateDialect) {
@@ -79,7 +79,7 @@ public class AppConfiguration {
   }
 
   @Bean
-  JpaTransactionManager transactionManager(@Autowired EntityManagerFactory entityManagerFactory) {
+  private JpaTransactionManager transactionManager(@Autowired EntityManagerFactory entityManagerFactory) {
     JpaTransactionManager manager = new JpaTransactionManager();
     manager.setEntityManagerFactory(entityManagerFactory);
     return manager;

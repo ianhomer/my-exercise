@@ -29,7 +29,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = {AppConfiguration.class})
 public class PersonTest {
   @Autowired
-  PersonRepository personRepository;
+  private PersonRepository personRepository;
 
   @Test
   public void testPerson() {

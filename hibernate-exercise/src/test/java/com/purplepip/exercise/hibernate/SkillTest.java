@@ -28,7 +28,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = {AppConfiguration.class})
 public class SkillTest {
   @Autowired
-  SkillRepository skillRepository;
+  private SkillRepository skillRepository;
 
   @Test
   public void testInitialData() {
