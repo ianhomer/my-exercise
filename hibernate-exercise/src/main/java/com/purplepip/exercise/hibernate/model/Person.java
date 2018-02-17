@@ -21,9 +21,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "Person")
+@Data
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,12 +33,4 @@ public class Person {
   private int id;
 
   private String name;
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 }
