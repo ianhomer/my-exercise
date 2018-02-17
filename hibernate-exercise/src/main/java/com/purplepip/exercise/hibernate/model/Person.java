@@ -34,7 +34,7 @@ import lombok.Data;
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "person_id")
+  @Column(name = "id")
   private int id;
 
   @Column(unique = true)
