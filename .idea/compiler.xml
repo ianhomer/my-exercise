@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hibernate-exercise" />
         <module name="project-example" />
         <module name="project-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hibernate-exercise" target="1.8" />
+      <module name="my-exercise" target="1.8" />
       <module name="project-example" target="1.8" />
       <module name="project-test" target="1.8" />
       <module name="purplepip-project" target="1.8" />

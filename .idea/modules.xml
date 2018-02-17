@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/hibernate-exercise/hibernate-exercise.iml" filepath="$PROJECT_DIR$/hibernate-exercise/hibernate-exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/my-exercise.iml" filepath="$PROJECT_DIR$/.idea/my-exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-example/project-example.iml" filepath="$PROJECT_DIR$/project-example/project-example.iml" />
     </modules>

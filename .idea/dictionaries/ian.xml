@@ -1,7 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="ian">
     <words>
+<<<<<<< HEAD
       <w>dexample</w>
+=======
+      <w>jdbc</w>
+>>>>>>> Hibernate persistance
     </words>
   </dictionary>
 </component>

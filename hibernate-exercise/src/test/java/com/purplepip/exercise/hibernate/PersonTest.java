@@ -13,18 +13,42 @@
  * limitations under the License.
  */
 
-package com.purplepip.exercise.hibernate.model;
+package com.purplepip.exercise.hibernate;
 
 import static org.junit.Assert.assertEquals;
 
-import com.purplepip.exercise.hibernate.Person;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {AppConfiguration.class})
 public class PersonTest {
+  @Autowired
+  PersonRepository personRepository;
+
   @Test
   public void testPerson() {
     Person person = new Person();
     person.setName("test");
     assertEquals("test", person.getName());
+  }
+
+  @Test
+  public void testMockData() {
+    createPerson("test1");
+    createPerson("test2");
+    createPerson("test3");
+    createPerson("test4");
+    createPerson("test5");
+    assertEquals(5, personRepository.count());
+  }
+
+  private void createPerson(String name) {
+    Person person = new Person();
+    person.setName(name);
+    personRepository.save(person);
   }
 }
