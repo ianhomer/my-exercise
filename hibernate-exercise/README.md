@@ -1,7 +1,5 @@
 # Hibernate Exercise
 
-Note that this requires a local MySQL database up and running.
+To run tests against local MySQL database
 
-    jdbc.url=jdbc:mysql://host:3306/exercise
-    jdbc.username=exercise
-    jdbc.password=exercise
+    mvn install -P mysql

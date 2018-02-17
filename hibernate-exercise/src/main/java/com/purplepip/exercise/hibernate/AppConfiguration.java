@@ -35,7 +35,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @ComponentScan(basePackages = {"com.purplepip.exercise.hibernate"})
 @EnableJpaRepositories(basePackages = {"com.purplepip.exercise.hibernate"})
-@PropertySource(value = "classpath:jdbc.properties")
+@PropertySource(value = "classpath:jdbc-${database:h2}.properties")
 @EnableTransactionManagement
 public class AppConfiguration {
   @Autowired

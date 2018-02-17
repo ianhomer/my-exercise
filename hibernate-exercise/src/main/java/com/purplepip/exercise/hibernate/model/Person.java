@@ -13,10 +13,30 @@
  * limitations under the License.
  */
 
-package com.purplepip.exercise.hibernate;
+package com.purplepip.exercise.hibernate.model;
 
-import com.purplepip.exercise.hibernate.model.Person;
-import org.springframework.data.repository.CrudRepository;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public interface PersonRepository extends CrudRepository<Person, Integer> {
+@Entity
+@Table(name = "Person")
+public class Person {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "USER_ID")
+  private int id;
+
+  private String name;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

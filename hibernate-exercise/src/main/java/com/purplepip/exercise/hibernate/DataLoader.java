@@ -15,28 +15,31 @@
 
 package com.purplepip.exercise.hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.purplepip.exercise.hibernate.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Entity
-@Table(name = "Person")
-public class Person {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "USER_ID")
-  private int id;
+@Component
+public class DataLoader {
+  private PersonRepository personRepository;
 
-  private String name;
-
-  public String getName() {
-    return name;
+  @Autowired
+  public DataLoader(PersonRepository personRepository) {
+    this.personRepository = personRepository;
+    load();
   }
 
-  public void setName(String name) {
-    this.name = name;
+  private void load() {
+    createPerson("test1");
+    createPerson("test2");
+    createPerson("test3");
+    createPerson("test4");
+    createPerson("test5");
+  }
+
+  private void createPerson(String name) {
+    Person person = new Person();
+    person.setName(name);
+    personRepository.save(person);
   }
 }

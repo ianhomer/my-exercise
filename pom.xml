@@ -44,8 +44,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+<<<<<<< HEAD
     <!-- Child projects can set purplepip.argLine.extra to append to the argLine -->
     <purplepip.argLine.extra/>
+=======
+    <purplepip.jvm/>
+>>>>>>> Use H2 embedded by default.  MySQL with explicit profile
     <purplepip.log.file>logback.xml</purplepip.log.file>
     <logback.debug>true</logback.debug>
     <purplepip.argLine>-Dlogback.configurationFile=${purplepip.log.file} -Dlogback.debug=${logback.debug} ${purplepip.argLine.extra}</purplepip.argLine>
@@ -318,7 +322,11 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
+<<<<<<< HEAD
           <argLine>@{jacoco.argLine} ${purplepip.argLine}</argLine>
+=======
+          <argLine>@{jacoco.argLine} ${purplepip.jvm} ${purplepip.log.jvm}</argLine>
+>>>>>>> Use H2 embedded by default.  MySQL with explicit profile
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
