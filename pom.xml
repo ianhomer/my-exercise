@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.purplepip</groupId>
-  <artifactId>project</artifactId>
+  <artifactId>my-exercise</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>purplepip project</name>
+  <name>my-exercise</name>
   <url>http://purplepip.com</url>
 
   <modules>
@@ -33,9 +33,9 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git:git@github.com:ianhomer/purplepip-project.git</connection>
-    <developerConnection>scm:git:git@github.com:ianhomer/purplepip-project.git</developerConnection>
-    <url>git@github.com:ianhomer/purplepip-project.git</url>
+    <connection>https://github.com/ianhomer/my-exercise</connection>
+    <developerConnection>https://github.com/ianhomer/my-exercise</developerConnection>
+    <url>https://github.com/ianhomer/my-exercise</url>
     <tag>HEAD</tag>
   </scm>
 
