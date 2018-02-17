@@ -24,9 +24,9 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Person")
+@Table(name = "Skill")
 @Data
-public class Person {
+public class Skill {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ID")

@@ -18,6 +18,7 @@ package com.purplepip.exercise.hibernate;
 import static org.junit.Assert.assertEquals;
 
 import com.purplepip.exercise.hibernate.model.Person;
+import com.purplepip.exercise.hibernate.repositories.PersonRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfiguration.class})
-public class PersonRepositoryTest {
+public class PersonTest {
   @Autowired
   PersonRepository personRepository;
 
@@ -39,6 +40,6 @@ public class PersonRepositoryTest {
 
   @Test
   public void testInitialData() {
-    assertEquals(5, personRepository.count());
+    assertEquals(10, personRepository.count());
   }
 }

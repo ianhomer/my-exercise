@@ -8,6 +8,7 @@
   </appender>
 
   <logger name="com.purplepip" level="TRACE"/>
+  <logger name="org.hibernate.type" level="TRACE"/>
 
   <root level="WARN">
     <appender-ref ref="STDOUT"/>

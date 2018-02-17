@@ -15,6 +15,7 @@
 
 package com.purplepip.exercise.hibernate;
 
+import com.purplepip.exercise.hibernate.repositories.PersonRepository;
 import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;

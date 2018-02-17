@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-package com.purplepip.exercise.hibernate;
+package com.purplepip.exercise.hibernate.repositories;
 
-import com.purplepip.exercise.hibernate.model.Person;
+import com.purplepip.exercise.hibernate.model.Skill;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PersonRepository extends CrudRepository<Person, Integer> {
+public interface SkillRepository extends CrudRepository<Skill, Integer> {
 }

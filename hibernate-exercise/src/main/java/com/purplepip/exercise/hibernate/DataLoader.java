@@ -16,25 +16,33 @@
 package com.purplepip.exercise.hibernate;
 
 import com.purplepip.exercise.hibernate.model.Person;
+import com.purplepip.exercise.hibernate.model.Skill;
+import com.purplepip.exercise.hibernate.repositories.PersonRepository;
+import com.purplepip.exercise.hibernate.repositories.SkillRepository;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader {
+  @Autowired
   private PersonRepository personRepository;
 
   @Autowired
-  public DataLoader(PersonRepository personRepository) {
-    this.personRepository = personRepository;
+  private SkillRepository skillRepository;
+
+  @PostConstruct
+  public void afterPropertiesSet() {
     load();
   }
 
   private void load() {
-    createPerson("test1");
-    createPerson("test2");
-    createPerson("test3");
-    createPerson("test4");
-    createPerson("test5");
+    for (int i = 0 ; i < 10 ; i ++) {
+      createSkill("skill" + i);
+    }
+    for (int i = 0 ; i < 10 ; i ++) {
+      createPerson("person" + i);
+    }
   }
 
   private void createPerson(String name) {
@@ -42,4 +50,11 @@ public class DataLoader {
     person.setName(name);
     personRepository.save(person);
   }
+
+  private void createSkill(String name) {
+    Skill skill = new Skill();
+    skill.setName(name);
+    skillRepository.save(skill);
+  }
+
 }
