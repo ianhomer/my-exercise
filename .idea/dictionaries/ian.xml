@@ -2,10 +2,15 @@
   <dictionary name="ian">
     <words>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <w>dexample</w>
 =======
       <w>jdbc</w>
 >>>>>>> Hibernate persistance
+=======
+      <w>dexample</w>
+      <w>jdbc</w>
+>>>>>>> IDEA configuration file changes
     </words>
   </dictionary>
 </component>
