@@ -1,8 +1,4 @@
 .idea/workspace.xml
-<<<<<<< HEAD
-=======
-
->>>>>>> Remove workspace / ignore from git
 target/
 
 pom.xml.tag
